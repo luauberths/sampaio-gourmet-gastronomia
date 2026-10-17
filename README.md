@@ -1,2 +1,2 @@
-# sampaio-gourmet-gastronomia
-Repositório da empresa Sampaio Gourmet &amp; Gastronomia
+# sampaio-gourmet-gastronomia-github
+Github oficial da ferramenta web.

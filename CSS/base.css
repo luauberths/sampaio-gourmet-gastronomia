@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap");
+:root {
+  --panel-border: rgba(117, 83, 49, 0.48);
+  --panel-border-strong: rgba(117, 83, 49, 0.6);
+  --divider-border: rgba(117, 83, 49, 0.26);
+  --gold: #9a7441;
+  --brown: #463a2e;
+  --cream: #fffdf9;
+  --white: #ffffff;
+  --green: #25d366;
+  --site-max: 1120px;
+  --content-gutter: clamp(18px, 3vw, 32px);
+  --section-spacing: clamp(26px, 3.2vw, 40px);
+  --mobile-section-spacing: clamp(24px, 5vw, 34px);
+  --title-content-spacing: 14px;
+  --header-content-spacing: 32px;
+  --mobile-nav-height: 68px;
+  --body-copy-size: 14px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--brown);
+  background-color: var(--cream);
+  overflow-x: clip;
+  font-size: var(--body-copy-size);
+}
+main {
+  flex: 1 0 auto;
+  min-width: 0;
+}
+img {
+  max-width: 100%;
+}
+b,
+strong {
+  font-weight: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.menu-icon,
+.partner-icon-wrapper {
+  display: flex;
+  flex: 0 0 58px;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #b79762 0%, #92662f 100%);
+  color: #fff;
+  box-shadow: 0 2px 7px rgba(88, 58, 24, 0.08);
+}
+.menu-icon svg,
+.partner-icon-wrapper svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 400px) {
+  .menu-icon,
+  .partner-icon-wrapper {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+  .menu-icon svg,
+  .partner-icon-wrapper svg {
+    width: 29px;
+    height: 29px;
+  }
+}
+.section-title {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(42px, 4.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--gold);
+}
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--title-content-spacing);
+  width: 100%;
+  margin: 0 auto var(--header-content-spacing);
+  text-align: center;
+}
+.page-header .section-title,
+.page-header > p {
+  margin: 0;
+}
+.page-header > p {
+  max-width: 700px;
+  line-height: 1.65;
+  text-align: left;
+}
+.page-header > p {
+  max-width: 650px;
+  font:
+    400 var(--body-copy-size)/1.6 "Montserrat",
+    sans-serif;
+  opacity: 0.7;
+  text-align: center;
+}
+.section-description {
+  width: 100%;
+  margin: 0;
+  font-size: var(--body-copy-size);
+  line-height: 1.8;
+  text-align: left;
+
+  overflow-wrap: break-word;
+  transition: opacity 0.5s ease-in-out;
+}
+.section-description.fade-out {
+  opacity: 0;
+}
+@media (max-width: 950px) {
+  :root {
+    --header-content-spacing: 26px;
+    --title-content-spacing: 10px;
+  }
+  .section-title {
+    font-size: clamp(40px, 9vw, 54px);
+  }
+  .section-description {
+    line-height: 1.75;
+  }
+  .page-header > p {
+    font-size: var(--body-copy-size);
+  }
+}
+.page-header > .section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.1em;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+.section-title-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.page-header > .section-title > .title-branch {
+  display: block;
+  flex: 0 0 0.86em;
+  width: 0.86em;
+  height: 1.04em;
+  margin-bottom: 0.18em;
+  object-fit: contain;
+}
+.title-branch-right {
+  transform: scaleX(-1);
+}
+@media (max-width: 600px) {
+  .page-header > .section-title {
+    gap: 0.08em;
+    font-size: clamp(30px, 7.5vw, 44px);
+  }
+  .page-header > .section-title > .title-branch {
+    flex-basis: 0.78em;
+    width: 0.78em;
+    height: 0.94em;
+  }
+}
+.hero-description-container .section-description,
+.about-content .section-description,
+.partner-card p {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  text-wrap: wrap;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  word-spacing: normal;
+  letter-spacing: normal;
+  overflow-wrap: break-word;
+}

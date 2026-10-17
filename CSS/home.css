@@ -1,0 +1,241 @@
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+.instagram-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.instagram-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+}
+.instagram-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.instagram-link {
+  font:
+    400 var(--body-copy-size) "Montserrat",
+    sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--brown);
+}
+.instagram-link:hover {
+  color: var(--gold);
+}
+.services-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+  font:
+    600 11px/1.5 "Montserrat",
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.service-item {
+  font-weight: 400;
+  opacity: 0.55;
+  transition: opacity 0.35s ease;
+}
+.service-item.highlighted {
+  font-weight: 600;
+  opacity: 1;
+}
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  width: 100%;
+  min-height: 2.4em;
+  margin: 0;
+  font-size: clamp(48px, 5vw, 64px);
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  overflow-wrap: break-word;
+}
+.hero-title > span {
+  display: block;
+  max-width: 100%;
+}
+#title-start,
+#title-end {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+#title-start.fade-out,
+#title-end.fade-out {
+  opacity: 0;
+}
+.hero-subtitle {
+  color: var(--gold);
+}
+.hero-description-container {
+  width: 100%;
+  max-width: 660px;
+  margin-top: 20px;
+}
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 26px;
+}
+.quote-button,
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 23px;
+  font:
+    400 var(--body-copy-size)/1.3 "Montserrat",
+    sans-serif;
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+.quote-button {
+  background: var(--brown);
+}
+.whatsapp-button {
+  background: var(--green);
+}
+.quote-button:hover,
+.whatsapp-button:hover {
+  filter: brightness(0.94);
+  transform: translateY(-2px);
+}
+.whatsapp-button-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.slideshow-container {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 4 / 5;
+  justify-self: end;
+  border-radius: 26px;
+  box-shadow: 0 22px 60px rgba(70, 50, 30, 0.13);
+  overflow: hidden;
+}
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+}
+@media (max-width: 950px) {
+  .hero-content {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  .instagram-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .services-subtitle {
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .hero-title {
+    align-items: center;
+    min-height: 0;
+    font-size: clamp(40px, 7vw, 52px);
+    line-height: 1.22;
+  }
+  .hero-description-container {
+    margin-top: 18px;
+    max-width: 680px;
+  }
+  .hero-buttons {
+    margin-top: 0;
+  }
+  .hero-buttons .quote-button {
+    display: none;
+  }
+  .whatsapp-button {
+    position: fixed;
+    right: 18px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 9998;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+  }
+  .slideshow-container {
+    align-self: center;
+    justify-self: center;
+    max-width: 620px;
+    aspect-ratio: 5 / 4;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(40px, 10vw, 48px);
+  }
+  .slideshow-container {
+    aspect-ratio: 4 / 5;
+  }
+  .whatsapp-button {
+    padding: 12px 16px;
+    font-size: var(--body-copy-size);
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-title {
+    height: 2.44em;
+    min-height: 0;
+    flex: none;
+  }
+  .hero-title > span {
+    flex: none;
+    width: max-content;
+    max-width: none;
+    height: 1.22em;
+    white-space: nowrap;
+    transform-origin: center;
+  }
+}

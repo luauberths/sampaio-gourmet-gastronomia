@@ -1,0 +1,296 @@
+.form-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.quote-content {
+  width: 100%;
+  min-width: 0;
+}
+.quote-container {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(20px, 3.5vw, 34px);
+  background: var(--cream);
+  border: 1px solid rgba(154, 116, 65, 0.46);
+  border-radius: 16px;
+}
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+  min-width: 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.form-group.full-width,
+.form-group:has(> #menu-type) {
+  grid-column: 1 / -1;
+}
+.form-group label {
+  font:
+    400 var(--body-copy-size)/1.5 "Montserrat",
+    sans-serif;
+  color: var(--brown);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  font:
+    400 var(--body-copy-size)/1.4 "Montserrat",
+    sans-serif;
+  color: var(--brown);
+  background: var(--cream);
+  border: 1px solid rgba(230, 216, 197, 0.9);
+  border-radius: 9px;
+  outline-offset: 2px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.form-group select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 54px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23463a2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 7 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+.date-input-wrap {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--cream);
+  border: 1px solid rgba(230, 216, 197, 0.9);
+  border-radius: 9px;
+}
+.form-group .date-input-wrap input[type="date"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 12px 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.date-input-wrap:has(input:disabled) {
+  background: #f0ebe3;
+}
+.date-input-wrap:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(154, 116, 65, 0.12);
+}
+.form-group .date-input-wrap input[type="date"]:focus {
+  box-shadow: none;
+}
+.form-group textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(154, 116, 65, 0.12);
+}
+.form-group input:disabled {
+  background: #f0ebe3;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.field-hint {
+  margin-top: 1px;
+  font:
+    400 var(--body-copy-size)/1.5 "Montserrat",
+    sans-serif;
+  color: var(--gold);
+}
+.quote-submit-button {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 6px;
+  padding: 13px 20px;
+  font:
+    400 var(--body-copy-size)/1.4 "Montserrat",
+    sans-serif;
+  color: var(--white);
+  background: var(--green);
+  border: 0;
+  border-radius: 24px;
+  cursor: pointer;
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease;
+}
+.quote-submit-button:hover {
+  filter: brightness(0.95);
+  transform: translateY(-2px);
+}
+.quote-submit-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+@media (max-width: 650px) {
+  .quote-form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .quote-container {
+    padding: 20px 18px;
+  }
+  .form-group .date-input-wrap input[type="date"] {
+    min-height: 46px;
+    overflow: hidden;
+    font-size: var(--body-copy-size);
+  }
+  .form-group .date-input-wrap input[type="date"]::-webkit-date-and-time-value {
+    min-width: 0;
+    text-align: left;
+  }
+  .form-group .date-input-wrap input[type="date"]::-webkit-datetime-edit {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .form-group
+    .date-input-wrap
+    input[type="date"]::-webkit-calendar-picker-indicator {
+    margin: 0;
+    padding: 0;
+  }
+}
+.date-input-wrap.has-date-calendar {
+  position: relative;
+  overflow: visible;
+}
+.form-group .date-input-wrap input[type="hidden"] {
+  display: none;
+}
+.date-calendar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  text-align: left;
+  font:
+    400 var(--body-copy-size)/1.4 "Montserrat",
+    sans-serif;
+  color: var(--brown);
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  cursor: pointer;
+}
+.date-calendar-toggle::after {
+  display: none;
+}
+.date-calendar-toggle:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.date-calendar {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 50;
+  width: min(100%, 350px);
+  padding: 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: var(--cream);
+  box-shadow: 0 12px 30px rgba(70, 58, 46, 0.14);
+  font:
+    400 var(--body-copy-size)/1.4 "Montserrat",
+    sans-serif;
+  color: var(--brown);
+}
+.date-calendar[hidden] {
+  display: none;
+}
+.date-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.date-calendar-header > span {
+  font-weight: 400;
+  text-align: center;
+}
+.date-calendar-header button,
+.date-calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--brown);
+  font: inherit;
+  cursor: pointer;
+}
+.date-calendar-header button {
+  width: 34px;
+  flex: 0 0 34px;
+  font-size: 25px;
+}
+.date-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+.date-calendar-weekday {
+  padding: 4px 0;
+  font-size: var(--body-copy-size);
+  font-weight: 400;
+  text-align: center;
+  color: var(--gold);
+}
+.date-calendar button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.date-calendar button:not(:disabled):hover {
+  background: #f0e7da;
+}
+.date-calendar-day[aria-pressed="true"] {
+  background: var(--gold);
+  color: white;
+}
+.date-calendar-day[aria-pressed="true"]:hover {
+  background: var(--brown);
+}
+@media (max-width: 650px) {
+  .date-calendar-toggle {
+    font-size: var(--body-copy-size);
+  }
+}

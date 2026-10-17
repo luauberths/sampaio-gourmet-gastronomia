@@ -1,0 +1,25 @@
+.mobile-sections {
+  display: none;
+}
+@media (max-width: 950px) {
+  .mobile-sections {
+    display: block;
+    width: 100%;
+  }
+  .mobile-sections > .page-section {
+    position: relative;
+    margin-inline: auto;
+    border-top: 0;
+  }
+  .mobile-sections > .page-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: var(--divider-border);
+    pointer-events: none;
+  }
+}

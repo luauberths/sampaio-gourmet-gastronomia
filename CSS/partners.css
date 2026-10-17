@@ -1,0 +1,76 @@
+.partners-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.partners-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+.partners-header {
+  max-width: 720px;
+}
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 22px;
+  width: 100%;
+}
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 28px 24px;
+  background: var(--cream);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(70, 50, 30, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.partner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(70, 50, 30, 0.09);
+}
+.partner-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 16px;
+}
+.partner-card-heading h3 {
+  min-width: 0;
+}
+.partner-card h3 {
+  margin: 0;
+  font:
+    600 17px/1.4 "Montserrat",
+    sans-serif;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.partner-card p {
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0;
+  font:
+    400 var(--body-copy-size)/1.7 "Montserrat",
+    sans-serif;
+  text-align: justify;
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .partners-grid {
+    gap: 16px;
+  }
+  .partner-card {
+    padding: 22px 20px;
+  }
+}

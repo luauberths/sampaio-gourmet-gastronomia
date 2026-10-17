@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Javascript/redirect.js" data-section="cardapios"></script>
+    <title>Cardápios - Sampaio Gourmet & Gastronomia</title>
+
+    <link rel="icon" type="image/png" href="Images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/greatvibes/v21/RWmMoKWR9v4ksMfaWd_JN9XFiaQ.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+    <link rel="stylesheet" href="CSS/menus.css" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="logo-container">
+        <img
+          class="logo"
+          src="Images/sampaio-gourmet-logo.png"
+          alt="Logo da empresa"
+        />
+      </div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <button class="menu-close" id="menu-close" aria-label="Fechar Menu">
+          &times;
+        </button>
+        <p><a href="/">Página Inicial</a></p>
+        <p><a href="/cardapios">Cardápios</a></p>
+        <p><a href="/orcamento">Solicitar orçamento</a></p>
+        <p><a href="/sobre">Sobre nós</a></p>
+        <p><a href="/parceiros">Parceiros</a></p>
+        <p><a href="/feedbacks">Feedbacks</a></p>
+      </div>
+    </nav>
+
+    <main class="page-section menus-page">
+      <div class="page-header menus-header">
+        <h1 class="section-title">
+          <img
+            src="Images/olive_branch.svg"
+            class="title-branch"
+            alt=""
+            aria-hidden="true"
+            width="80"
+            height="80"
+          />
+          <span class="section-title-text">Cardápios</span>
+          <img
+            src="Images/olive_branch.svg"
+            class="title-branch title-branch-right"
+            alt=""
+            aria-hidden="true"
+            width="80"
+            height="80"
+          />
+        </h1>
+        <p>
+          Conheça as opções de cardápio que preparamos para tornar seu evento
+          ainda mais especial.
+        </p>
+      </div>
+
+      <svg
+        class="menu-symbols"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        width="0"
+        height="0"
+      >
+        <symbol id="icon-cloche" viewBox="0 0 24 24">
+          <path d="M3 18h18M5 16a7 7 0 0 1 14 0H5ZM12 7V5M10 5h4M7 21h10" />
+        </symbol>
+        <symbol id="icon-snack" viewBox="0 0 24 24">
+          <path
+            d="M4 14h16l-2 7H6l-2-7ZM7 14l-2-3 4-2 3 5M12 14l1-6 4 2-1 4M10 8 9 5M16 7l2-3M5 8 3 6"
+          />
+        </symbol>
+        <symbol id="icon-salgados" viewBox="0 0 24 24">
+          <path
+            d="M3 19h18M5 16c0-3 2.5-5.5 5-5.5s5 2.5 5 5.5H5ZM10 16c0-3 2.5-5.5 5-5.5s5 2.5 5 5.5H10ZM8 8l-2-3M15 8l2-3M7 22h10"
+          />
+        </symbol>
+        <symbol id="icon-salad" viewBox="0 0 24 24">
+          <path
+            d="M3 13h18l-2 7H5l-2-7ZM12 13C7 9 9 5 12 3c3 2 5 6 0 10ZM12 13c-5 0-7-3-7-6 3 0 5 1 7 6ZM12 13c5 0 7-3 7-6-3 0-5 1-7 6Z"
+          />
+        </symbol>
+        <symbol id="icon-protein" viewBox="0 0 24 24">
+          <path
+            d="M13 4c3-2 7-1 8 3s-1 7-5 8l-5-5c-2-3-1-5 2-6ZM11 10l-6 6a2.2 2.2 0 1 0-1.5 4 2.2 2.2 0 1 0 4-1.5l6-6"
+          />
+        </symbol>
+        <symbol id="icon-cake" viewBox="0 0 24 24">
+          <path
+            d="M4 11h16v9H4v-9ZM4 15c2-2 4 2 6 0s4-2 6 0 4 0 4 0M8 11V8m4 3V7m4 4V8M8 4v2m4-3v2m4-1v2"
+          />
+        </symbol>
+        <symbol id="icon-dessert" viewBox="0 0 24 24">
+          <path
+            d="M5 12h14l-2 9H7l-2-9ZM6 12c-3-4 1-6 4-4 1-5 7-4 8 0 3-1 5 2 2 4H6ZM12 4c0-2 1-2 1-3"
+          />
+        </symbol>
+        <symbol id="icon-drink" viewBox="0 0 24 24">
+          <path d="M5 6h14l-2 15H7L5 6ZM4 6h16M9 11h6M13 21l1-15 4-4h3" />
+        </symbol>
+        <symbol id="icon-soup" viewBox="0 0 24 24">
+          <path
+            d="M3 13h18c-.3 5-3 7-9 7s-8.7-2-9-7ZM7 9c-2-2 2-3 0-5M12 10c-2-2 2-3 0-6M17 9c-2-2 2-3 0-5M9 22h6"
+          />
+        </symbol>
+        <symbol id="icon-cheese" viewBox="0 0 24 24">
+          <path
+            d="M3 11 13 4l8 6v10H3v-9ZM3 11h18M8 16h.1M14 15h.1M17 18h.1M7 20v-5"
+          />
+        </symbol>
+      </svg>
+      <div class="menus-container">
+        <details
+          class="menu-choice"
+          id="almoco-jantar"
+          name="cardapios-exclusivos"
+        >
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Almoço - Jantar</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>1 opção de entrada adicional</li>
+                <li>2 opções de arroz</li>
+                <li>2 opções de massa</li>
+                <li>2 opções de proteína</li>
+                <li>2 opções de sobremesa</li>
+              </ul>
+            </aside>
+            <div class="menu-columns">
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-snack"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Entradas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Salgados:</h4>
+                      <p>
+                        Coxinha, quibe, esfiha, bolinha de queijo, risole e
+                        pastelzinho
+                      </p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções adicionais:</h4>
+                      <ul class="menu-lines">
+                        <li>1- Pão de metro: tradicional ou salpicão</li>
+                        <li>
+                          2- Canapés com torradas (patê de frango, azeitona ou
+                          ricota)
+                        </li>
+                        <li>3- Mini pizza</li>
+                        <li>4- Batata Frita</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-cloche"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Almoço · Jantar</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções</h4>
+                      <ul class="menu-lines">
+                        <li>1- Arroz branco</li>
+                        <li>2- Arroz à grega</li>
+                        <li>3- Arroz biro-biro</li>
+                        <li>4- Arroz de forno</li>
+                      </ul>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções de massas:</h4>
+                      <ul class="menu-lines">
+                        <li>
+                          1- Rondelli de presunto e queijo ao molho (sugo ou
+                          branco)
+                        </li>
+                        <li>2- Macarrão pene ao molho (sugo ou branco)</li>
+                        <li>3- Raviolli ao molho (sugo ou branco)</li>
+                        <li>4- Capeletti ao molho (sugo ou branco)</li>
+                        <li>5- Macarrão caracol ao molho branco</li>
+                        <li>6- Lasanha à bolonhesa</li>
+                        <li>7- Espaguete ao molho</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-protein"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Opções de proteína</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <ul class="menu-lines">
+                      <li>1- Strogonoff de frango ou carne</li>
+                      <li>2- Filé de frango à parmegiana</li>
+                      <li>3- Frango empanado</li>
+                      <li>4- Lagarto ao molho madeira</li>
+                      <li>5- Escondidinho de frango ou carne moída</li>
+                      <li>6- Pernil desfiado ao molho</li>
+                      <li>7- Cupim ao molho malzebier</li>
+                    </ul>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-salad"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Saladas (cortesia)</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Alface, tomate, repolho, macarrão colorido, acelga,
+                      beterraba e maionese
+                    </p>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Sucos:</h4>
+                      <p>Polpa ou artificial - sabores variados</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes:</h4>
+                      <p>
+                        Coca-cola, guaraná antárctica, sukita laranja, sprite
+                        limão, água (c/s gás)
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Opções de sobremesa</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <ul class="menu-lines">
+                        <li>1- Mousse de Limão ou Maracujá</li>
+                        <li>2- Pudim</li>
+                        <li>3- Merengue</li>
+                        <li>4- Salada de Fruta</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Encerramento</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Bolo com sorvete de creme, café com petit four na recepção
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">Sabor, qualidade e momentos especiais!</p>
+          </div>
+        </details>
+        <details class="menu-choice" id="churrasco" name="cardapios-exclusivos">
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Churrasco</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>1 opção de entrada adicional</li>
+                <li>2 opções de arroz</li>
+                <li>2 opções de massa</li>
+                <li>2 opções de sobremesa</li>
+              </ul>
+              <p class="menu-selection-extra">
+                Todas as proteínas estão incluídas.
+              </p>
+            </aside>
+            <div class="menu-columns">
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-snack"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Entradas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Salgados</h4>
+                      <p>
+                        Coxinha, quibe, esfiha, bolinha de queijo, risole,
+                        batata-frita
+                      </p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções adicionais</h4>
+                      <ul class="menu-lines">
+                        <li>1- Pão de metro (tradicional ou salpicão)</li>
+                        <li>
+                          2- Canapés com torrada (patê azeitona, frango e
+                          ricota)
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-cloche"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Almoço · Jantar</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções de arroz</h4>
+                      <ul class="menu-lines">
+                        <li>1- Arroz branco</li>
+                        <li>2- Arroz à grega</li>
+                        <li>3- Arroz biro-biro</li>
+                      </ul>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções de massas</h4>
+                      <ul class="menu-lines">
+                        <li>
+                          1- Ravioli ou capelletti ao molho (sugo ou branco)
+                        </li>
+                        <li>2- Macarrão penne ao molho (sugo ou branco)</li>
+                        <li>3- Macarrão caracol ao molho branco</li>
+                      </ul>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Proteínas</h4>
+                      <p>
+                        Carne, coxa e asa de frango, filé de frango em fatias,
+                        linguiça e pão de alho
+                      </p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Saladas</h4>
+                      <p>Alface, vinagrete, maionese e vagem com cenoura</p>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Sucos:</h4>
+                      <p>Polpa ou artificial - sabores variados</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes:</h4>
+                      <p>
+                        Coca-cola, guaraná antárctica, sukita laranja, sprite
+                        limão, água (c/s gás)
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Opções de sobremesas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <ul class="menu-lines">
+                      <li>1- Mousse de limão</li>
+                      <li>2- Mousse de maracujá</li>
+                      <li>3- Merengue</li>
+                      <li>4- Salada de fruta</li>
+                      <li>5- Pudim</li>
+                    </ul>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Encerramento</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Bolo com sorvete de creme, café com petit four na recepção
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">Sabor, qualidade e momentos especiais!</p>
+          </div>
+        </details>
+        <details
+          class="menu-choice"
+          id="finger-food"
+          name="cardapios-exclusivos"
+        >
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Coquetel finger food</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>1 opção de prato quente</li>
+                <li>3 opções de sobremesa</li>
+              </ul>
+            </aside>
+            <div class="menu-columns">
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-snack"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Ilha Gastronômica</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Salgados</h4>
+                      <p>
+                        Coxinha, quibe, esfiha, bolinha de queijo, risole e
+                        pastelzinho
+                      </p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Demais petiscos</h4>
+                      <p>
+                        Mini pizza, mini lanche brioche, pão de forma com patê,
+                        canapés com patê, pão de metro, bolos secos, baguete
+                        recheada, dadinho de tapioca com geleia de pimenta,
+                        torta e empada
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-soup"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Opções Quentes</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <ul class="menu-lines">
+                      <li>1- Rondelli de presunto e queijo</li>
+                      <li>2- Buraco quente</li>
+                      <li>3- Pernil desfiado</li>
+                    </ul>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-cheese"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Patês, geleias e frios</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Patês:</h4>
+                      <p>Presunto, azeitonas, frango e ricota</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Geleias:</h4>
+                      <p>Frutas vermelhas, abacaxi e pimenta</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Frios:</h4>
+                      <p>
+                        Queijos mussarela, parmesão, ricota, brie, gorgonzola,
+                        bastão, gouda e meia-lua; peito de peru, mortadela em
+                        cubos, presunto, peito de frango em fatias, lombo em
+                        rodelas, salsicha em conserva, azeitona, salame e ovos
+                        de codorna em conserva.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Sobremesas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <ul class="menu-lines">
+                      <li>1- Mousse (Limão ou maracujá)</li>
+                      <li>2- Merengue</li>
+                      <li>3- Salada de frutas</li>
+                      <li>4- Pudim</li>
+                      <li>5- Torta</li>
+                    </ul>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewBox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>Sucos diversos</p>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes</h4>
+                      <p>
+                        Coca-cola, guaraná antárctica, sukita laranja, sprite
+                        limão e água (c/s gás)
+                      </p>
+                    </div>
+                    <p>Café, café com leite, chá</p>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Encerramento</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>Bolo com sorvete de creme</p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">
+              Qualidade, sabor e muito carinho em cada detalhe!
+            </p>
+          </div>
+        </details>
+        <details
+          class="menu-choice"
+          id="infantil-entradas"
+          name="cardapios-exclusivos"
+        >
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Infantil · Lanches e Massas</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>2 opções de sobremesa</li>
+              </ul>
+            </aside>
+            <div class="menu-columns">
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-snack"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Entradas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Salgados, esfiha de carne ou frango, pastelzinho, pão de
+                      metro: tradicional ou salpicão, hot dog, mini pizza,
+                      batata frita, pipoca, mini hambúrguer, baguete recheada
+                    </p>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-soup"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Prato quente</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>Penne ao molho branco e sugo</p>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Sucos:</h4>
+                      <p>Diversos - polpa ou artificial</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes:</h4>
+                      <p>Coca, kuat, sukita laranja, sprite, água com gás</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Sobremesa</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções:</h4>
+                      <ul class="menu-lines">
+                        <li>1- Mousse: limão, maracujá ou morango</li>
+                        <li>2- Pudim</li>
+                        <li>3- Salada de fruta</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Cortesia</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Bolo, 100 docinhos, toalhas de mesa, guardanapos de pano
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">
+              Sabor, diversão e muito carinho em cada detalhe!
+            </p>
+          </div>
+        </details>
+        <details
+          class="menu-choice"
+          id="infantil-almoco"
+          name="cardapios-exclusivos"
+        >
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Infantil · Almoço e Jantar</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>2 opções de sobremesa</li>
+              </ul>
+            </aside>
+            <div class="menu-columns">
+              <section class="menu-panel">
+                <h3 class="menu-panel-heading">
+                  <span class="menu-icon"
+                    ><svg aria-hidden="true" viewbox="0 0 24 24">
+                      <use href="#icon-salgados"></use></svg
+                  ></span>
+                  <span class="menu-panel-title">Entradas</span>
+                </h3>
+                <div class="menu-panel-body">
+                  <p>
+                    Esfiha de carne ou frango, pastelzinho, pão de metro:
+                    tradicional ou salpicão, hot dog, mini pizza, batata frita,
+                    pipoca, mini hambúrguer, baguete recheada
+                  </p>
+                </div>
+              </section>
+
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cloche"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Almoço - Jantar</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Principal:</h4>
+                      <p>Arroz branco</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Massas:</h4>
+                      <p>Penne ao molho branco e sugo</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Saladas (cortesia):</h4>
+                      <p>Alface, tomate, repolho, macarrão colorido, pepino</p>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Sucos:</h4>
+                      <p>Diversos - polpa ou artificial</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes:</h4>
+                      <p>Coca, kuat, sukita laranja, sprite, água com gás</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Sobremesa</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções:</h4>
+                      <ul class="menu-lines">
+                        <li>1- Mousse: limão, maracujá ou morango</li>
+                        <li>2- Pudim</li>
+                        <li>3- Salada de fruta</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Cortesia</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Bolo, 100 docinhos, toalhas de mesa, guardanapos de pano
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">
+              Sabor, diversão e muito carinho em cada detalhe!
+            </p>
+          </div>
+        </details>
+        <details
+          class="menu-choice"
+          id="infantil-petiscos"
+          name="cardapios-exclusivos"
+        >
+          <summary class="menu-choice-toggle">
+            <span class="menu-choice-name">Infantil · Lanches e Petiscos</span>
+            <span class="menu-choice-indicator" aria-hidden="true"></span>
+          </summary>
+          <div class="menu-choice-body">
+            <aside class="menu-selection" aria-label="Orientações de escolha">
+              <p class="menu-selection-title">
+                Para compor seu cardápio, escolha:
+              </p>
+              <ul class="menu-selection-list">
+                <li>2 opções de sobremesa</li>
+              </ul>
+            </aside>
+            <div class="menu-columns">
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-snack"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Ilha Gastronômica</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <p>
+                        Pão de metro: tradicional ou salpicão, pipoca, mini
+                        cachorro quente, mini hambúrguer, mini pizza, batata
+                        frita, pipoca salgada, dadinho de tapioca, bolos secos,
+                        baguete recheada
+                      </p>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-salgados"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Salgados</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Coxinha, quibe, esfiha de frango ou carne, bolinha de
+                      queijo, risole, pastelzinho
+                    </p>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-drink"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Bebidas</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Sucos:</h4>
+                      <p>Polpa ou artificial, sabores variados</p>
+                    </div>
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Refrigerantes:</h4>
+                      <p>
+                        Coca-cola normal e zero, guaraná antártica, sukita
+                        laranja, sprite limão
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="menu-column">
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-dessert"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Doces</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <div class="menu-group">
+                      <h4 class="menu-group-title">Opções:</h4>
+                      <ul class="menu-lines">
+                        <li>1- Mousse de limão ou maracujá</li>
+                        <li>2- Salada de fruta</li>
+                        <li>3- Pudim</li>
+                        <li>4- Torta doce</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section class="menu-panel">
+                  <h3 class="menu-panel-heading">
+                    <span class="menu-icon"
+                      ><svg aria-hidden="true" viewbox="0 0 24 24">
+                        <use href="#icon-cake"></use></svg
+                    ></span>
+                    <span class="menu-panel-title">Cortesia</span>
+                  </h3>
+                  <div class="menu-panel-body">
+                    <p>
+                      Bolo com sorvete de creme, café com petif four na recepção
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p class="menu-note">
+              Sabor, diversão e muito carinho em cada detalhe!
+            </p>
+          </div>
+        </details>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column footer-brand">
+          <div class="logo-footer-container">
+            <img
+              class="logo-footer"
+              src="Images/sampaio-gourmet-logo.png"
+              alt="Logo da empresa"
+            />
+          </div>
+        </div>
+        <div class="footer-column footer-explore">
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-explore-links">
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/cardapios">Cardápios</a></li>
+            <li><a href="/orcamento">Solicitar orçamento</a></li>
+            <li><a href="/sobre">Sobre nós</a></li>
+            <li><a href="/parceiros">Parceiros</a></li>
+            <li><a href="/feedbacks">Feedbacks</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Fale conosco</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="https://wa.me/message/L7BZPYUL3SFEG1" target="_blank">
+                Atendimento pelo WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@sampaiogourmetgastronomia.com.br">
+                contato@sampaiogourmetgastronomia.com.br
+              </a>
+            </li>
+            <li class="footer-location">
+              Atendimento Grande São Paulo e região
+            </li>
+          </ul>
+          <div class="footer-social">
+            <a
+              href="https://www.instagram.com/sampaio.gourmet_/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <img
+                src="Images/instagram-icon.png"
+                alt="Instagram"
+                class="footer-instagram-icon"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/p/Buffet-Sampaio-Gourmet-Gastronomia-61594903192230/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <img
+                src="Images/facebook-icon.png"
+                alt="Facebook"
+                class="footer-facebook-icon"
+              />
+            </a>
+            <a
+              href="https://wa.me/message/L7BZPYUL3SFEG1"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="Images/whatsapp-social-icon.png"
+                alt="WhatsApp"
+                class="footer-whatsapp-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> Sampaio Gourmet & Gastronomia.
+          Todos os direitos reservados.
+        </p>
+        <p>CNPJ: 65.164.787/0001-72</p>
+      </div>
+    </footer>
+
+    <script src="Javascript/main.js"></script>
+    <script src="Javascript/menus.js"></script>
+  </body>
+</html>
