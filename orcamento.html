@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Javascript/redirect.js" data-section="orcamento"></script>
+    <title>Solicitar orçamento - Sampaio Gourmet & Gastronomia</title>
+
+    <link rel="icon" type="image/png" href="Images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="preload"
+      href="https://fonts.gstatic.com/s/greatvibes/v21/RWmMoKWR9v4ksMfaWd_JN9XFiaQ.woff2"
+      as="font" type="font/woff2" crossorigin />
+    <link rel="preload"
+      href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2"
+      as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+    <link rel="stylesheet" href="CSS/quote.css" />
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <div class="logo-container">
+        <img class="logo" src="Images/sampaio-gourmet-logo.png"
+          alt="Sampaio Gourmet &amp; Gastronomia" />
+      </div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <button class="menu-close" id="menu-close" aria-label="Fechar Menu">
+          &times;
+        </button>
+        <p><a href="/">Página Inicial</a></p>
+        <p><a href="/cardapios">Cardápios</a></p>
+        <p><a href="/orcamento">Solicitar orçamento</a></p>
+        <p><a href="/sobre">Sobre nós</a></p>
+        <p><a href="/parceiros">Parceiros</a></p>
+        <p><a href="/feedbacks">Feedbacks</a></p>
+      </div>
+    </nav>
+
+    <main class="page-section form-section" id="home">
+      <div class="quote-content">
+        <div class="page-header">
+          <h1 class="section-title">
+            <img src="Images/olive_branch.svg" class="title-branch" alt=""
+              aria-hidden="true" width="80" height="80" />
+            <span class="section-title-text">Solicite seu Orçamento</span>
+            <img src="Images/olive_branch.svg"
+              class="title-branch title-branch-right" alt="" aria-hidden="true"
+              width="80" height="80" />
+          </h1>
+          <p>
+            Preencha os dados abaixo e receba uma proposta personalizada
+            diretamente no seu WhatsApp.
+          </p>
+        </div>
+
+        <div class="quote-container">
+          <form id="quote-form" class="quote-form">
+            <div class="form-group">
+              <label for="full-name">Nome Completo *</label>
+              <input type="text" id="full-name" name="full-name"
+                placeholder="Digite seu nome completo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone / WhatsApp *</label>
+              <input type="tel" id="phone" name="phone"
+                placeholder="(11) 99999-9999" required />
+            </div>
+
+            <div class="form-group">
+              <label for="event-type">Tipo de Evento *</label>
+              <select id="event-type" name="event-type" required>
+                <option value="" disabled selected>
+                  Selecione o tipo de evento
+                </option>
+                <option value="Aniversário / Festas Infantis">
+                  Aniversário / Festas Infantis
+                </option>
+                <option value="Bodas">Bodas</option>
+                <option value="Casamento / Noivado">Casamento / Noivado</option>
+                <option value="Coffee Break / Evento Corporativo">
+                  Coffee Break / Evento Corporativo
+                </option>
+                <option value="Confraternização">Confraternização</option>
+                <option value="Chá de bebê">Chá de bebê</option>
+                <option value="Debutante (15 Anos)">Debutante (15 Anos)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="event-date">Quando será o evento? *</label>
+              <div class="date-input-wrap">
+                <input type="date" id="event-date" name="event-date" disabled
+                  required />
+              </div>
+              <small id="date-hint" class="field-hint">Preencha o nome, telefone
+                e tipo de evento para liberar a
+                data.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="guest-count">Quantidade de Pessoas *</label>
+              <input type="number" id="guest-count" name="guest-count" min="1"
+                max="300" placeholder="Ex: 50" required />
+            </div>
+
+            <div class="form-group">
+              <label for="city">Cidade do Evento *</label>
+              <select id="city" name="city" required>
+                <option value="" disabled selected>
+                  Selecione a cidade do evento
+                </option>
+                <option value="Alphaville">Alphaville</option>
+                <option value="Barueri">Barueri</option>
+                <option value="Carapicuíba">Carapicuíba</option>
+                <option value="Cotia">Cotia</option>
+                <option value="Embu das Artes">Embu das Artes</option>
+                <option value="Granja Viana">Granja Viana</option>
+                <option value="Itapevi">Itapevi</option>
+                <option value="Jandira">Jandira</option>
+                <option value="Lapa">Lapa</option>
+                <option value="Osasco">Osasco</option>
+                <option value="Santana de Parnaíba">Santana de Parnaíba</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="menu-type">Tipo de Cardápio *</label>
+              <select id="menu-type" name="menu-type" required>
+                <option value="" disabled selected>Selecione o cardápio</option>
+                <option value="Almoço - Jantar">Almoço - Jantar</option>
+                <option value="Churrasco">Churrasco</option>
+                <option value="Coquetel finger food">
+                  Coquetel finger food
+                </option>
+                <option value="Infantil · Lanches e Massas">
+                  Infantil · Lanches e Massas
+                </option>
+                <option value="Infantil · Almoço e Jantar">
+                  Infantil · Almoço e Jantar
+                </option>
+                <option value="Infantil · Lanches e Petiscos">
+                  Infantil · Lanches e Petiscos
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="notes">Comentários / Observações</label>
+              <textarea id="notes" name="notes" rows="4"
+                placeholder="Conte-nos mais sobre preferências de cardápio, detalhes do local ou preferências de horário..."></textarea>
+            </div>
+
+            <button type="submit" class="quote-submit-button">
+              Enviar para o WhatsApp
+              <img src="Images/whatsapp-button-icon.png" alt="Ícone do WhatsApp"
+                class="quote-submit-icon" />
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-column footer-brand">
+          <div class="logo-footer-container">
+            <img class="logo-footer" src="Images/sampaio-gourmet-logo.png"
+              alt="Sampaio Gourmet &amp; Gastronomia" />
+          </div>
+        </div>
+        <div class="footer-column footer-explore">
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-explore-links">
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/cardapios">Cardápios</a></li>
+            <li><a href="/orcamento">Solicitar orçamento</a></li>
+            <li><a href="/sobre">Sobre nós</a></li>
+            <li><a href="/parceiros">Parceiros</a></li>
+            <li><a href="/feedbacks">Feedbacks</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Fale conosco</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="https://wa.me/5511966884935?text=Ol%C3%A1!%20Conheci%20a%20Sampaio%20Gourmet%20%26%20Gastronomia%20pelo%20site%20e%20gostaria%20de%20esclarecer%20algumas%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20de%20voc%C3%AAs."
+                target="_blank">
+                Atendimento pelo WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@sampaiogourmetgastronomia.com.br">
+                contato@sampaiogourmetgastronomia.com.br
+              </a>
+            </li>
+            <li class="footer-location">
+              Atendimento Grande São Paulo e região
+            </li>
+          </ul>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/sampaio.gourmet_/"
+              target="_blank" aria-label="Instagram">
+              <img src="Images/instagram-icon.png" alt="Instagram"
+                class="footer-instagram-icon" />
+            </a>
+            <a href="https://www.facebook.com/p/Buffet-Sampaio-Gourmet-Gastronomia-61594903192230/"
+              target="_blank" aria-label="Facebook">
+              <img src="Images/facebook-icon.png" alt="Facebook"
+                class="footer-facebook-icon" />
+            </a>
+            <a href="https://wa.me/5511966884935?text=Ol%C3%A1!%20Conheci%20a%20Sampaio%20Gourmet%20%26%20Gastronomia%20pelo%20site%20e%20gostaria%20de%20esclarecer%20algumas%20d%C3%BAvidas%20sobre%20os%20servi%C3%A7os%20de%20voc%C3%AAs."
+              target="_blank" aria-label="WhatsApp">
+              <img src="Images/whatsapp-social-icon.png" alt="WhatsApp"
+                class="footer-whatsapp-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> Sampaio Gourmet & Gastronomia.
+          Todos os direitos reservados.
+        </p>
+        <p>CNPJ: 65.164.787/0001-72</p>
+      </div>
+    </footer>
+
+    <script src="Javascript/main.js"></script>
+    <script src="Javascript/quote.js"></script>
+  </body>
+</html>

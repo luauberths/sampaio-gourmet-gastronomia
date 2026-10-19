@@ -1,0 +1,35 @@
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.about-content .section-description {
+  min-height: 0;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 600px;
+  margin: clamp(24px, 3vw, 36px) auto 0;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+@media (max-width: 950px) {
+  .about-content {
+    gap: 18px;
+  }
+
+  .about-photo img {
+    height: clamp(420px, 110vw, 760px);
+    border-radius: 20px;
+  }
+}

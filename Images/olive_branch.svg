@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -16 180 216" fill="none">
+  <defs>
+    <linearGradient id="leaf-gold" x1="-25" y1="-42" x2="7" y2="2" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1dfb8"/>
+      <stop offset=".38" stop-color="#c69b58"/>
+      <stop offset=".62" stop-color="#e5c68a"/>
+      <stop offset="1" stop-color="#a87735"/>
+    </linearGradient>
+    <g id="olive-leaf">
+      <path d="M0 0C-15-6-28-23-25-46C-9-39 2-19 0 0Z" fill="url(#leaf-gold)" stroke="#93672e" stroke-width=".8"/>
+      <path d="M0 0C-11-17-21-32-25-46" stroke="#815925" stroke-width=".85" stroke-linecap="round"/>
+      <path d="M-4-7L-13-8M-7-12L-18-15M-10-18L-23-23M-14-24L-25-30M-18-31L-26-36M-5-9L-3-18M-9-15L-8-26M-13-21L-13-32M-17-29L-18-38" stroke="#f7e9c8" stroke-width=".65" stroke-linecap="round" opacity=".9"/>
+      <path d="M-9-15L-19-18M-14-24L-24-28M-18-31L-25-35" stroke="#a77a3c" stroke-width=".45"/>
+    </g>
+  </defs>
+  <path d="M17 193C44 163 66 133 87 100C105 72 122 46 137 15" stroke="#8c622e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18 193C47 159 70 126 88 98C110 65 124 40 137 15" stroke="#d1ad6c" stroke-width=".65" stroke-linecap="round"/>
+  <path d="M38 168L29 153M48 155L68 146M58 140L45 125M70 124L91 113M80 109L65 95M92 91L114 82M101 77L91 60M113 58L132 47M123 39L117 25" stroke="#986b32" stroke-width="1.2" stroke-linecap="round"/>
+  <use href="#olive-leaf" transform="translate(31 157) rotate(-22) scale(.81)"/>
+  <use href="#olive-leaf" transform="translate(63 149) rotate(94) scale(.94)"/>
+  <use href="#olive-leaf" transform="translate(49 131) rotate(-17) scale(.91)"/>
+  <use href="#olive-leaf" transform="translate(87 117) rotate(93) scale(1.02)"/>
+  <use href="#olive-leaf" transform="translate(69 100) rotate(-8) scale(.9)"/>
+  <use href="#olive-leaf" transform="translate(109 85) rotate(88) scale(.86)"/>
+  <use href="#olive-leaf" transform="translate(94 66) rotate(1) scale(.79)"/>
+  <use href="#olive-leaf" transform="translate(127 51) rotate(87) scale(.72)"/>
+  <use href="#olive-leaf" transform="translate(120 31) rotate(17) scale(.62)"/>
+  <use href="#olive-leaf" transform="translate(137 16) rotate(63) scale(.47)"/>
+</svg>
