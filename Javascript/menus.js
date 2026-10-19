@@ -13,7 +13,10 @@ if (menus) {
       dialog.append(content);
       dialog.querySelector("#menu-dialog-title .section-title-text").textContent =
         button.querySelector(".menu-choice-name").textContent.trim();
+
       dialog.showModal();
+      dialog.scrollTop = 0;
+      content.scrollTop = 0;
     });
   });
 }
