@@ -213,7 +213,6 @@
     right: 18px;
     bottom: max(18px, env(safe-area-inset-bottom));
     z-index: 9998;
-    box-shadow: 0 8px 26px var(--floating-button-shadow-color);
   }
 
   .slideshow-container {
