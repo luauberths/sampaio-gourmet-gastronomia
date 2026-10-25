@@ -5,8 +5,6 @@ if (menus) {
   let activeContent = null;
   let placeholder = null;
 
-  // Balanced lines can be narrower than their layout box. Fit the box to
-  // the rendered text so the olive branches stay beside the words.
   function fitClosingNote() {
     if (!dialog.open || !activeContent) return;
     const text = activeContent.querySelector(".menu-note-text");
@@ -20,7 +18,6 @@ if (menus) {
     const widths = Array.from(range.getClientRects(), (rect) => rect.width);
     const width = Math.max(0, ...widths);
     if (width > 0) text.style.width = `${Math.ceil(width) + 1}px`;
-    // Keep layout measurement from changing the reader's current position.
     dialog.scrollTop = scrollTop;
     dialog.scrollLeft = scrollLeft;
   }
@@ -37,7 +34,6 @@ if (menus) {
   let noteViewportWidth = document.documentElement.clientWidth;
   window.addEventListener("resize", () => {
     const width = document.documentElement.clientWidth;
-    // Mobile browser controls and screenshot overlays can change only height.
     if (width === noteViewportWidth) return;
     noteViewportWidth = width;
     scheduleClosingNote();
@@ -46,8 +42,7 @@ if (menus) {
     document.fonts.ready.then(scheduleClosingNote);
     document.fonts.addEventListener("loadingdone", scheduleClosingNote);
   }
-
-  // Restore the original node instead of discarding and cloning its SVGs.
+  
   function restoreContent() {
     if (!activeContent) return;
     activeContent.hidden = true;
@@ -57,7 +52,6 @@ if (menus) {
   }
 
   dialog.addEventListener("close", () => {
-    // A close event may still be queued if another menu was opened immediately.
     if (!dialog.open) restoreContent();
   });
 
