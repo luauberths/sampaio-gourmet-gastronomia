@@ -11,6 +11,7 @@
 
 .menus-page .menus-header {
   max-width: 900px;
+  margin-bottom: 24px;
 }
 
 .menus-page .menus-container {
@@ -511,9 +512,8 @@ body:has(.menus-page dialog[open]) {
   gap: 28px;
   width: 100%;
   max-width: 1000px;
-  margin: 32px auto 32px;
-  padding: 28px 0 8px;
-  border-top: 1px solid var(--divider-border);
+  margin: 0 auto 32px;
+  padding: 0 0 8px;
 }
 .menus-page .menu-extra-copy { min-width: 0; text-align: center; }
 .menus-page .menu-extra-label {
@@ -575,8 +575,8 @@ body:has(.menus-page dialog[open]) {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    margin-top: 24px;
-    padding-top: 24px;
+    margin-top: 0;
+    padding-top: 0;
   }
   .menus-page .menu-extra h2 { font-size: 34px; }
 }
