@@ -623,7 +623,7 @@ body:has(.menus-page dialog[open]) {
   font-family: var(--display-font);
   color: var(--menu-title-color);
   font-weight: 600;
-  font-size: calc(var(--body-copy-size) + 6px);
+  font-size: calc(var(--body-copy-size) + 10px);
   line-height: calc(var(--body-copy-size) * 1.5);
 }
 
