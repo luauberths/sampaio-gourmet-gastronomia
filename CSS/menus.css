@@ -130,21 +130,26 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > .page-header {
-  padding: var(--menu-dialog-top-space) clamp(18px, 3.5vw, 34px) 0;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(10px, 2vw, 22px);
+  padding: var(--menu-dialog-top-space) calc(68px + env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
   margin-bottom: 0;
 }
 
 .menus-page > dialog .menu-dialog-logo {
   display: block;
   flex: 0 0 auto;
-  width: clamp(150px, 18vw, 180px);
+  width: clamp(64px, 9vw, 100px);
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0;
   object-fit: contain;
 }
 
 .menus-page > dialog > .page-header > .section-title {
+  flex: 1 1 0;
+  min-width: 0;
   font-size: clamp(31px, 4vw, 52px);
 }
 
