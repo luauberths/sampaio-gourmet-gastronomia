@@ -1,5 +1,5 @@
 .menus-page {
-  --menu-dialog-top-space: 64px;
+  --menu-dialog-top-space: 16px;
   --menu-olive-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-8%20-16%20180%20216%22%20fill%3D%22none%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22leaf-gold%22%20x1%3D%22-25%22%20y1%3D%22-42%22%20x2%3D%227%22%20y2%3D%222%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%23f1dfb8%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22.38%22%20stop-color%3D%22%23c69b58%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22.62%22%20stop-color%3D%22%23e5c68a%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23a87735%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3Cg%20id%3D%22olive-leaf%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200C-15-6-28-23-25-46C-9-39%202-19%200%200Z%22%20fill%3D%22url%28%23leaf-gold%29%22%20stroke%3D%22%2393672e%22%20stroke-width%3D%22.8%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200C-11-17-21-32-25-46%22%20stroke%3D%22%23815925%22%20stroke-width%3D%22.85%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M-4-7L-13-8M-7-12L-18-15M-10-18L-23-23M-14-24L-25-30M-18-31L-26-36M-5-9L-3-18M-9-15L-8-26M-13-21L-13-32M-17-29L-18-38%22%20stroke%3D%22%23f7e9c8%22%20stroke-width%3D%22.65%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.9%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M-9-15L-19-18M-14-24L-24-28M-18-31L-25-35%22%20stroke%3D%22%23a77a3c%22%20stroke-width%3D%22.45%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20d%3D%22M17%20193C44%20163%2066%20133%2087%20100C105%2072%20122%2046%20137%2015%22%20stroke%3D%22%238c622e%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M18%20193C47%20159%2070%20126%2088%2098C110%2065%20124%2040%20137%2015%22%20stroke%3D%22%23d1ad6c%22%20stroke-width%3D%22.65%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M38%20168L29%20153M48%20155L68%20146M58%20140L45%20125M70%20124L91%20113M80%20109L65%2095M92%2091L114%2082M101%2077L91%2060M113%2058L132%2047M123%2039L117%2025%22%20stroke%3D%22%23986b32%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2831%20157%29%20rotate%28-22%29%20scale%28.81%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2863%20149%29%20rotate%2894%29%20scale%28.94%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2849%20131%29%20rotate%28-17%29%20scale%28.91%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2887%20117%29%20rotate%2893%29%20scale%281.02%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2869%20100%29%20rotate%28-8%29%20scale%28.9%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%28109%2085%29%20rotate%2888%29%20scale%28.86%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%2894%2066%29%20rotate%281%29%20scale%28.79%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%28127%2051%29%20rotate%2887%29%20scale%28.72%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%28120%2031%29%20rotate%2817%29%20scale%28.62%29%22%2F%3E%0A%20%20%3Cuse%20href%3D%22%23olive-leaf%22%20transform%3D%22translate%28137%2016%29%20rotate%2863%29%20scale%28.47%29%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
@@ -100,12 +100,13 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > form {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: var(--menu-dialog-top-space);
+  right: calc(12px + env(safe-area-inset-right));
   z-index: 3;
-  display: flex;
-  justify-content: flex-end;
-  height: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
 }
 
 .menus-page > dialog > form button {
@@ -113,8 +114,7 @@ body:has(.menus-page dialog[open]) {
   place-items: center;
   width: 44px;
   height: 44px;
-  margin: 12px;
-  margin-top: var(--menu-dialog-top-space);
+  margin: 0;
   padding: 0;
   color: var(--brown);
   background: var(--cream);
@@ -150,6 +150,7 @@ body:has(.menus-page dialog[open]) {
 
 .menus-page > dialog > .menu-choice-body {
   padding-top: 20px;
+  padding-bottom: 16px;
 }
 
 .menus-page .menu-columns {
@@ -491,7 +492,7 @@ body:has(.menus-page dialog[open]) {
 
 @media (max-width: 950px) {
   .menus-page {
-    --menu-dialog-top-space: calc(76px + env(safe-area-inset-top));
+    --menu-dialog-top-space: calc(12px + env(safe-area-inset-top));
   }
 
   .menus-page > dialog {
@@ -509,18 +510,13 @@ body:has(.menus-page dialog[open]) {
     box-shadow: none;
   }
 
-  .menus-page > dialog > form button {
-    margin-top: var(--menu-dialog-top-space);
-    margin-right: calc(12px + env(safe-area-inset-right));
-  }
-
   .menus-page > dialog > .page-header {
     padding-top: var(--menu-dialog-top-space);
   }
 
   .menus-page > dialog > .menu-choice-body {
     padding-right: max(18px, env(safe-area-inset-right));
-    padding-bottom: calc(27px + env(safe-area-inset-bottom));
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
     padding-left: max(18px, env(safe-area-inset-left));
   }
 }
@@ -627,6 +623,7 @@ body:has(.menus-page dialog[open]) {
 
 .menus-page .menus-container .menu-choice-category {
   display: block;
+  font-family: var(--display-font);
   color: var(--menu-title-color);
   font-weight: 600;
 }
