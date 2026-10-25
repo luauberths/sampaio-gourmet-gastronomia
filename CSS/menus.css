@@ -355,7 +355,6 @@ body:has(.menus-page dialog[open]) {
   font-weight: 400;
 }
 
-/* O aviso do brunch contém somente uma frase, sem lista abaixo. */
 .menus-page .menu-brunch .menu-selection-title {
   margin: 0;
 }
@@ -521,7 +520,6 @@ body:has(.menus-page dialog[open]) {
   }
 }
 
-/* Brunch: faixa adicional entre a apresentação e a grade de cardápios. */
 .menus-page .menu-extra {
   display: flex;
   flex-direction: column;
@@ -604,7 +602,6 @@ body:has(.menus-page dialog[open]) {
   .menus-page .menu-extra h2 { font-size: 34px; }
 }
 
-/* Slots iguais mantêm ícones e primeiras linhas alinhados em toda a grade. */
 .menus-page .menus-container .menu-choice-toggle {
   --menu-card-icon-size: 72px;
   display: grid;
@@ -626,6 +623,8 @@ body:has(.menus-page dialog[open]) {
   font-family: var(--display-font);
   color: var(--menu-title-color);
   font-weight: 600;
+  font-size: calc(var(--body-copy-size) + 4px);
+  line-height: calc(var(--body-copy-size) * 1.5);
 }
 
 .menus-page .menus-container .menu-choice-description {
