@@ -12,12 +12,17 @@ if (menus) {
     const text = activeContent.querySelector(".menu-note-text");
     if (!text) return;
 
+    const scrollTop = dialog.scrollTop;
+    const scrollLeft = dialog.scrollLeft;
     text.style.removeProperty("width");
     const range = document.createRange();
     range.selectNodeContents(text);
     const widths = Array.from(range.getClientRects(), (rect) => rect.width);
     const width = Math.max(0, ...widths);
     if (width > 0) text.style.width = `${Math.ceil(width) + 1}px`;
+    // Keep layout measurement from changing the reader's current position.
+    dialog.scrollTop = scrollTop;
+    dialog.scrollLeft = scrollLeft;
   }
 
   let noteFrame = null;
@@ -29,7 +34,14 @@ if (menus) {
     });
   }
 
-  window.addEventListener("resize", scheduleClosingNote);
+  let noteViewportWidth = document.documentElement.clientWidth;
+  window.addEventListener("resize", () => {
+    const width = document.documentElement.clientWidth;
+    // Mobile browser controls and screenshot overlays can change only height.
+    if (width === noteViewportWidth) return;
+    noteViewportWidth = width;
+    scheduleClosingNote();
+  });
   if (document.fonts) {
     document.fonts.ready.then(scheduleClosingNote);
     document.fonts.addEventListener("loadingdone", scheduleClosingNote);
@@ -59,6 +71,7 @@ if (menus) {
       content.hidden = false;
       dialog.append(content);
       dialog.querySelector("#menu-dialog-title .section-title-text").textContent =
+        button.querySelector(".menu-choice-name").dataset.menuTitle ||
         button.querySelector(".menu-choice-name").textContent.trim();
 
       if (!dialog.open) dialog.showModal();
