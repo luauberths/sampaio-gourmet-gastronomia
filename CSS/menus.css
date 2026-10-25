@@ -132,6 +132,16 @@ body:has(.menus-page dialog[open]) {
   margin-bottom: 0;
 }
 
+.menus-page > dialog .menu-dialog-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: clamp(150px, 18vw, 180px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 .menus-page > dialog > .page-header > .section-title {
   font-size: clamp(31px, 4vw, 52px);
 }
@@ -342,6 +352,11 @@ body:has(.menus-page dialog[open]) {
   font-weight: 400;
 }
 
+/* O aviso do brunch contém somente uma frase, sem lista abaixo. */
+.menus-page .menu-brunch .menu-selection-title {
+  margin: 0;
+}
+
 .menus-page .menu-selection-list {
   margin: 0;
   padding-left: 20px;
@@ -441,30 +456,31 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page .menu-botanical .menu-note {
-  position: relative;
-  padding-inline: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--title-branch-gap);
+  padding-inline: 0;
+}
+
+.menus-page .menu-botanical .menu-note-text {
+  min-width: 0;
+  text-wrap: balance;
 }
 
 .menus-page .menu-botanical .menu-note::before,
 .menus-page .menu-botanical .menu-note::after {
   content: "";
-  position: absolute;
-  top: 50%;
+  display: block;
+  flex: 0 0 28px;
   width: 28px;
   height: 38px;
   background: var(--menu-olive-image) center / contain no-repeat;
-  transform: translateY(-50%);
-}
-
-.menus-page .menu-botanical .menu-note::before {
-  left: 0;
 }
 
 .menus-page .menu-botanical .menu-note::after {
-  right: 0;
-  transform: translateY(-50%) scaleX(-1);
+  transform: scaleX(-1);
 }
-
 
 .menus-page > dialog:has(.menu-botanical) > form button {
   border: 1px solid var(--gold);
