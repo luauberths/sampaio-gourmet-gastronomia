@@ -535,12 +535,15 @@ body:has(.menus-page dialog[open]) {
   background: var(--menu-selection-background);
   box-shadow: inset 0 0 0 4px var(--cream);
 }
-.menus-page .menu-extra-copy { min-width: 0; text-align: left; }
+.menus-page .menu-extra-copy { min-width: 0; text-align: center; }
 .menus-page .menu-extra-heading {
-  display: flex;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
+}
+.menus-page .menu-extra-heading::before {
+  content: "";
 }
 .menus-page .menu-extra-label {
   margin: 0 0 6px;
@@ -567,7 +570,7 @@ body:has(.menus-page dialog[open]) {
   min-height: 44px;
   aspect-ratio: auto;
   padding: 0;
-  border: 0;
+  border: 1px solid var(--gold);
   border-radius: 50%;
   color: var(--brown);
   background: transparent;
@@ -589,7 +592,7 @@ body:has(.menus-page dialog[open]) {
 }
 .menus-page .menu-extra-action {
   font-family: var(--body-font);
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1;
 }
 .menus-page .menu-extra-toggle:focus-visible {
