@@ -31,7 +31,7 @@
   let redirectDestination = null;
   let initialHashDestination = null;
   let navigationScrollRequest = 0;
-  let sectionEntryObserver = null;
+  let sectionEntryFrame = null;
 
   function scrollToTop() {
     const root = document.documentElement;
@@ -150,39 +150,29 @@
   }
 
   function animateSectionEntry(target) {
-    if (sectionEntryObserver) {
-      sectionEntryObserver.disconnect();
-      sectionEntryObserver = null;
-    }
-    if (
-      target.classList.contains("about-section") ||
-      reducedMotionQuery.matches ||
-      !("IntersectionObserver" in window)
-    )
-      return;
-    const heading = target.querySelector(".page-header, .section-title, h1");
-    if (!heading || typeof heading.animate !== "function") return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
-        observer.disconnect();
-        if (sectionEntryObserver === observer) sectionEntryObserver = null;
-        heading.animate(
-          [
-            { opacity: 0.72, transform: "translateY(10px)" },
-            { opacity: 1, transform: "translateY(0)" },
-          ],
-          {
-            duration: 420,
-            easing: "cubic-bezier(.22, 1, .36, 1)",
-          },
-        );
-      },
-      { threshold: 0, rootMargin: "0px 0px -10% 0px" },
-    );
-    sectionEntryObserver = observer;
-    observer.observe(heading);
+    if (sectionEntryFrame !== null) cancelAnimationFrame(sectionEntryFrame);
+    sectionEntryFrame = null;
+    if (reducedMotionQuery.matches) return;
+    const started = performance.now();
+    let previousScroll = window.scrollY;
+    let stableFrames = 0;
+    const finish = () => {
+      if (!mobileQuery.matches || !target.isConnected) {
+        sectionEntryFrame = null;
+        return;
+      }
+      const currentScroll = window.scrollY;
+      stableFrames = Math.abs(currentScroll - previousScroll) < 0.5 ? stableFrames + 1 : 0;
+      previousScroll = currentScroll;
+      const elapsed = performance.now() - started;
+      if ((elapsed > 100 && stableFrames >= 3) || elapsed > 1600) {
+        sectionEntryFrame = null;
+        window.SampaioMotion?.enterSection(target);
+        return;
+      }
+      sectionEntryFrame = requestAnimationFrame(finish);
+    };
+    sectionEntryFrame = requestAnimationFrame(finish);
   }
 
   function navigateToSection(id, updateHistory = true, smooth = true) {
@@ -203,8 +193,8 @@
       requestAnimationFrame(() => {
         if (requestId !== navigationScrollRequest || !mobileQuery.matches)
           return;
-        if (smooth) animateSectionEntry(target);
         scrollToElement(target, smooth);
+        animateSectionEntry(target);
       }),
     );
   }
@@ -284,9 +274,9 @@
   mobileQuery.addEventListener("change", () => {
     if (mobileQuery.matches) {
       initializeMobile().catch(() => { });
-    } else if (sectionEntryObserver) {
-      sectionEntryObserver.disconnect();
-      sectionEntryObserver = null;
+    } else if (sectionEntryFrame !== null) {
+      cancelAnimationFrame(sectionEntryFrame);
+      sectionEntryFrame = null;
     }
   });
   initializeMobile().catch(() => { });

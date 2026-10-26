@@ -2,11 +2,72 @@ const menus = document.querySelector(".menus-page");
 
 if (menus) {
   const dialog = menus.querySelector("dialog");
+  const scroller = dialog.querySelector(".menu-dialog-scroll");
+  let savedScrollTop = 0;
+  let savedScrollLeft = 0;
+  let resumePosition = null;
+  let resumeFrame = null;
+  let resumeTimer = null;
   let activeContent = null;
   let placeholder = null;
   let openingAnimation = null;
   let closingAnimation = null;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function cancelScrollRestore() {
+    if (resumeFrame !== null) cancelAnimationFrame(resumeFrame);
+    if (resumeTimer !== null) clearTimeout(resumeTimer);
+    resumeFrame = null;
+    resumeTimer = null;
+    resumePosition = null;
+  }
+
+  function rememberScroll() {
+    if (!dialog.open || resumePosition || document.visibilityState === "hidden") return;
+    savedScrollTop = scroller.scrollTop;
+    savedScrollLeft = scroller.scrollLeft;
+  }
+
+  function suspendScroll() {
+    if (!dialog.open || resumePosition) return;
+    resumePosition = { top: savedScrollTop, left: savedScrollLeft };
+  }
+
+  function resumeScroll() {
+    if (!dialog.open || !resumePosition) return;
+    const position = resumePosition;
+    const restore = () => {
+      if (!dialog.open || resumePosition !== position) return;
+      scroller.scrollTop = position.top;
+      scroller.scrollLeft = position.left;
+    };
+    if (resumeFrame !== null) cancelAnimationFrame(resumeFrame);
+    if (resumeTimer !== null) clearTimeout(resumeTimer);
+    restore();
+    resumeFrame = requestAnimationFrame(() => {
+      resumeFrame = null;
+      restore();
+    });
+    resumeTimer = setTimeout(() => {
+      resumeTimer = null;
+      restore();
+      resumePosition = null;
+      rememberScroll();
+    }, 250);
+  }
+
+  scroller.addEventListener("scroll", rememberScroll, { passive: true });
+  dialog.addEventListener("pointerdown", cancelScrollRestore, { passive: true });
+  dialog.addEventListener("wheel", cancelScrollRestore, { passive: true });
+  dialog.addEventListener("keydown", cancelScrollRestore);
+  window.addEventListener("blur", suspendScroll);
+  window.addEventListener("focus", resumeScroll);
+  window.addEventListener("pagehide", suspendScroll);
+  window.addEventListener("pageshow", resumeScroll);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") suspendScroll();
+    else resumeScroll();
+  });
 
   function closeDialog() {
     if (!dialog.open || closingAnimation) return;
@@ -46,16 +107,16 @@ if (menus) {
     const text = activeContent.querySelector(".menu-note-text");
     if (!text) return;
 
-    const scrollTop = dialog.scrollTop;
-    const scrollLeft = dialog.scrollLeft;
+    const scrollTop = scroller.scrollTop;
+    const scrollLeft = scroller.scrollLeft;
     text.style.removeProperty("width");
     const range = document.createRange();
     range.selectNodeContents(text);
     const widths = Array.from(range.getClientRects(), (rect) => rect.width);
     const width = Math.max(0, ...widths);
     if (width > 0) text.style.width = `${Math.ceil(width) + 1}px`;
-    dialog.scrollTop = scrollTop;
-    dialog.scrollLeft = scrollLeft;
+    scroller.scrollTop = scrollTop;
+    scroller.scrollLeft = scrollLeft;
   }
 
   let noteFrame = null;
@@ -89,6 +150,9 @@ if (menus) {
 
   dialog.addEventListener("close", () => {
     if (!dialog.open) {
+      cancelScrollRestore();
+      savedScrollTop = 0;
+      savedScrollLeft = 0;
       openingAnimation?.cancel();
       closingAnimation?.cancel();
       openingAnimation = null;
@@ -100,13 +164,16 @@ if (menus) {
   menus.querySelectorAll(".menu-choice-toggle").forEach((button) => {
     button.addEventListener("click", (event) => {
       if (closingAnimation) return;
+      cancelScrollRestore();
+      savedScrollTop = 0;
+      savedScrollLeft = 0;
       restoreContent();
       const content = button.closest(".menu-choice").querySelector(".menu-choice-body");
       placeholder = document.createComment("menu-content-position");
       content.replaceWith(placeholder);
       activeContent = content;
       content.hidden = false;
-      dialog.insertBefore(content, dialog.querySelector(".menu-dialog-footer"));
+      scroller.insertBefore(content, scroller.querySelector(".menu-dialog-footer"));
       dialog.querySelector("#menu-dialog-title .section-title-text").textContent =
         button.querySelector(".menu-choice-name").dataset.menuTitle ||
         button.querySelector(".menu-choice-name").textContent.trim();
@@ -116,16 +183,16 @@ if (menus) {
         document.activeElement.blur();
       }
       fitClosingNote();
-      dialog.scrollTop = 0;
+      scroller.scrollTop = 0;
       content.scrollTop = 0;
       openingAnimation?.cancel();
       if (!reducedMotion.matches && typeof dialog.animate === "function") {
-        openingAnimation = dialog.animate(
+        openingAnimation = scroller.animate(
           [
-            { opacity: 0, transform: "translateY(8px)" },
+            { opacity: 0, transform: "translateY(10px)" },
             { opacity: 1, transform: "translateY(0)" },
           ],
-          { duration: 200, easing: "cubic-bezier(.22, 1, .36, 1)" },
+          { duration: 260, easing: "cubic-bezier(.22, 1, .36, 1)" },
         );
       }
     });
