@@ -4,6 +4,7 @@ if (menus) {
   const dialog = menus.querySelector("dialog");
   let activeContent = null;
   let placeholder = null;
+  let activePhoto = null;
 
   function fitClosingNote() {
     if (!dialog.open || !activeContent) return;
@@ -45,6 +46,11 @@ if (menus) {
   
   function restoreContent() {
     if (!activeContent) return;
+    if (activePhoto) {
+      activeContent.prepend(activePhoto);
+      activePhoto = null;
+    }
+    dialog.classList.remove("has-menu-photo");
     activeContent.hidden = true;
     placeholder.replaceWith(activeContent);
     activeContent = null;
@@ -63,7 +69,12 @@ if (menus) {
       content.replaceWith(placeholder);
       activeContent = content;
       content.hidden = false;
-      dialog.append(content);
+      activePhoto = content.querySelector(".menu-photo");
+      if (activePhoto) {
+        dialog.insertBefore(activePhoto, dialog.querySelector(".page-header"));
+        dialog.classList.add("has-menu-photo");
+      }
+      dialog.insertBefore(content, dialog.querySelector(".menu-dialog-footer"));
       dialog.querySelector("#menu-dialog-title .section-title-text").textContent =
         button.querySelector(".menu-choice-name").dataset.menuTitle ||
         button.querySelector(".menu-choice-name").textContent.trim();
