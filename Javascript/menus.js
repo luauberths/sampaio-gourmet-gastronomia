@@ -2,6 +2,8 @@ const menus = document.querySelector(".menus-page");
 
 if (menus) {
   const dialog = menus.querySelector("dialog");
+  const viewport = document.querySelector('meta[name="viewport"]');
+  const originalViewport = viewport?.getAttribute("content");
   let activeContent = null;
   let placeholder = null;
   let activePhoto = null;
@@ -58,7 +60,13 @@ if (menus) {
   }
 
   dialog.addEventListener("close", () => {
-    if (!dialog.open) restoreContent();
+    if (!dialog.open) {
+      restoreContent();
+      if (viewport) {
+        if (originalViewport === null) viewport.removeAttribute("content");
+        else viewport.setAttribute("content", originalViewport);
+      }
+    }
   });
 
   menus.querySelectorAll(".menu-choice-toggle").forEach((button) => {
@@ -79,7 +87,14 @@ if (menus) {
         button.querySelector(".menu-choice-name").dataset.menuTitle ||
         button.querySelector(".menu-choice-name").textContent.trim();
 
-      if (!dialog.open) dialog.showModal();
+      if (!dialog.open) {
+        if (viewport) {
+          const settings = (originalViewport || "width=device-width, initial-scale=1.0")
+            .replace(/,?\s*viewport-fit\s*=\s*[^,]+/gi, "");
+          viewport.setAttribute("content", `${settings}, viewport-fit=cover`);
+        }
+        dialog.showModal();
+      }
       fitClosingNote();
       dialog.scrollTop = 0;
       content.scrollTop = 0;
