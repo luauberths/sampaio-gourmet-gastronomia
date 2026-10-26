@@ -130,10 +130,12 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > .page-header {
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: start;
   align-items: center;
-  gap: clamp(10px, 2vw, 22px);
-  padding: var(--menu-dialog-top-space) calc(68px + env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
+  gap: 10px;
+  padding: var(--menu-dialog-top-space) max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
   margin-bottom: 0;
 }
 
@@ -148,7 +150,7 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > .page-header > .section-title {
-  flex: 1 1 0;
+  width: 100%;
   min-width: 0;
   font-size: clamp(31px, 4vw, 52px);
 }
