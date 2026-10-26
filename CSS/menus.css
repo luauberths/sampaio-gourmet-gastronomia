@@ -663,7 +663,7 @@ body:has(.menus-page dialog[open]) {
 .menus-page > dialog:has(.menu-botanical) > form button {
   color: var(--brown);
   background: var(--white);
-  border: 0;
+  border: 1px solid var(--gold);
   box-shadow: none;
   outline: none;
   -webkit-appearance: none;
