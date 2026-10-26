@@ -58,7 +58,7 @@ if (menus) {
   });
 
   menus.querySelectorAll(".menu-choice-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
       restoreContent();
       const content = button.closest(".menu-choice").querySelector(".menu-choice-body");
       placeholder = document.createComment("menu-content-position");
@@ -71,6 +71,9 @@ if (menus) {
         button.querySelector(".menu-choice-name").textContent.trim();
 
       if (!dialog.open) dialog.showModal();
+      if (event.detail > 0 && dialog.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
       fitClosingNote();
       dialog.scrollTop = 0;
       content.scrollTop = 0;
