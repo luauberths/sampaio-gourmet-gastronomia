@@ -143,7 +143,7 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > .menu-dialog-scroll > .page-header {
-  padding: calc(var(--menu-dialog-top-space) + 60px) max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
+  padding: var(--menu-dialog-top-space) calc(68px + env(safe-area-inset-right)) 0 calc(68px + env(safe-area-inset-left));
   margin-bottom: 0;
 }
 
@@ -164,6 +164,7 @@ body:has(.menus-page dialog[open]) {
 .menus-page > dialog > .menu-dialog-scroll > .page-header > .section-title {
   width: 100%;
   min-width: 0;
+  min-height: 44px;
   font-size: clamp(31px, 4vw, 52px);
 }
 
