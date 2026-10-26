@@ -130,22 +130,25 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page > dialog > .page-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: start;
-  align-items: center;
-  gap: 10px;
-  padding: var(--menu-dialog-top-space) max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
+  padding: calc(var(--menu-dialog-top-space) + 60px) max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
   margin-bottom: 0;
+}
+
+.menus-page > dialog.has-menu-photo > .page-header {
+  padding-top: 24px;
+}
+
+.menus-page > dialog > .menu-dialog-footer {
+  padding: 24px 18px calc(32px + env(safe-area-inset-bottom));
+  text-align: center;
 }
 
 .menus-page > dialog .menu-dialog-logo {
   display: block;
-  flex: 0 0 auto;
-  width: clamp(64px, 9vw, 100px);
+  width: clamp(100px, 12vw, 140px);
   max-width: 100%;
   height: auto;
-  margin: 0;
+  margin: 0 auto;
   object-fit: contain;
 }
 
@@ -163,10 +166,10 @@ body:has(.menus-page dialog[open]) {
 .menus-page .menu-photo {
   display: block;
   width: 100%;
-  max-width: 1000px;
-  height: clamp(180px, 24vw, 260px);
-  margin: 0 auto 24px;
-  border-radius: 12px;
+  max-width: none;
+  height: clamp(220px, 32vw, 400px);
+  margin: 0;
+  border-radius: 0;
   object-fit: cover;
   object-position: var(--menu-photo-position, center);
 }
@@ -527,9 +530,6 @@ body:has(.menus-page dialog[open]) {
     box-shadow: none;
   }
 
-  .menus-page > dialog > .page-header {
-    padding-top: var(--menu-dialog-top-space);
-  }
 
   .menus-page > dialog > .menu-choice-body {
     padding-right: max(18px, env(safe-area-inset-right));
@@ -657,4 +657,17 @@ body:has(.menus-page dialog[open]) {
     --menu-card-icon-size: 48px;
     min-height: calc(var(--menu-card-icon-size) + 4.5em + 50px);
   }
+}
+
+.menus-page > dialog > form button,
+.menus-page > dialog:has(.menu-botanical) > form button {
+  color: var(--brown);
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--black) 24%, transparent);
+}
+
+.menus-page > dialog > form button:focus-visible {
+  outline: 2px solid var(--brown);
+  outline-offset: 3px;
 }
