@@ -82,13 +82,26 @@
   max-height: 100dvh;
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  overflow: hidden;
   color: var(--brown);
   background: var(--cream);
   border: 0;
   border-radius: 0;
   box-shadow: none;
+}
+
+.menus-page > dialog > .menu-dialog-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menus-page > dialog > .menu-dialog-scroll:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -1px;
 }
 
 .menus-page > dialog::backdrop {
@@ -129,12 +142,12 @@ body:has(.menus-page dialog[open]) {
   padding: 38px clamp(18px, 3.5vw, 34px) 32px;
 }
 
-.menus-page > dialog > .page-header {
+.menus-page > dialog > .menu-dialog-scroll > .page-header {
   padding: calc(var(--menu-dialog-top-space) + 60px) max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-right)) 0 max(clamp(18px, 3.5vw, 34px), env(safe-area-inset-left));
   margin-bottom: 0;
 }
 
-.menus-page > dialog > .menu-dialog-footer {
+.menus-page > dialog > .menu-dialog-scroll > .menu-dialog-footer {
   padding: 4px 18px calc(24px + env(safe-area-inset-bottom));
   text-align: center;
 }
@@ -148,13 +161,13 @@ body:has(.menus-page dialog[open]) {
   object-fit: contain;
 }
 
-.menus-page > dialog > .page-header > .section-title {
+.menus-page > dialog > .menu-dialog-scroll > .page-header > .section-title {
   width: 100%;
   min-width: 0;
   font-size: clamp(31px, 4vw, 52px);
 }
 
-.menus-page > dialog > .menu-choice-body {
+.menus-page > dialog > .menu-dialog-scroll > .menu-choice-body {
   padding-top: 20px;
   padding-bottom: 0;
 }
@@ -307,7 +320,7 @@ body:has(.menus-page dialog[open]) {
     box-shadow: none;
   }
 
-  .menus-page > dialog > .page-header > .section-title {
+  .menus-page > dialog > .menu-dialog-scroll > .page-header > .section-title {
     font-size: clamp(28px, 7vw, 36px);
   }
 
@@ -516,7 +529,7 @@ body:has(.menus-page dialog[open]) {
   }
 
 
-  .menus-page > dialog > .menu-choice-body {
+  .menus-page > dialog > .menu-dialog-scroll > .menu-choice-body {
     padding-right: max(18px, env(safe-area-inset-right));
     padding-bottom: 0;
     padding-left: max(18px, env(safe-area-inset-left));

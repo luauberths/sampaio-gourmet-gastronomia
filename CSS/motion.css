@@ -9,16 +9,6 @@
     transition: scale 120ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
   }
 
-  .menu-choice-toggle:active,
-  .quote-button:active,
-  .whatsapp-button:active,
-  .quote-submit-button:active,
-  .reviews-arrow:active:not(:disabled),
-  .date-calendar-toggle:active:not(:disabled),
-  .date-calendar-day:active:not(:disabled) {
-    scale: 0.985;
-  }
-
   .menu-extra-action {
     transition: translate 180ms ease;
   }
