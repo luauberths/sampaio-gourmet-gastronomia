@@ -134,10 +134,6 @@ body:has(.menus-page dialog[open]) {
   margin-bottom: 0;
 }
 
-.menus-page > dialog.has-menu-photo > .page-header {
-  padding-top: 24px;
-}
-
 .menus-page > dialog > .menu-dialog-footer {
   padding: 24px 18px calc(32px + env(safe-area-inset-bottom));
   text-align: center;
@@ -161,17 +157,6 @@ body:has(.menus-page dialog[open]) {
 .menus-page > dialog > .menu-choice-body {
   padding-top: 20px;
   padding-bottom: 16px;
-}
-
-.menus-page .menu-photo {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: clamp(150px, 20vw, 280px);
-  margin: 0;
-  border-radius: 0;
-  object-fit: cover;
-  object-position: var(--menu-photo-position, center);
 }
 
 .menus-page .menu-columns {
@@ -539,22 +524,24 @@ body:has(.menus-page dialog[open]) {
 }
 
 .menus-page .menu-extra {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
+  display: block;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto 32px;
-  padding: 24px 28px;
+  padding: 18px 24px;
   border: 1px solid var(--divider-border);
   border-left: 3px solid var(--gold);
   border-radius: 10px;
   background: var(--menu-selection-background);
   box-shadow: inset 0 0 0 4px var(--cream);
 }
-.menus-page .menu-extra-copy { min-width: 0; text-align: center; }
+.menus-page .menu-extra-copy { min-width: 0; text-align: left; }
+.menus-page .menu-extra-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 .menus-page .menu-extra-label {
   margin: 0 0 6px;
   color: var(--gold);
@@ -564,7 +551,8 @@ body:has(.menus-page dialog[open]) {
   text-transform: uppercase;
 }
 .menus-page .menu-extra h2 {
-  margin: 0 0 6px;
+  min-width: 0;
+  margin: 0;
   color: var(--menu-title-color);
   font-family: var(--display-font);
   font-size: 38px;
@@ -572,21 +560,22 @@ body:has(.menus-page dialog[open]) {
   line-height: 1.2;
 }
 .menus-page .menu-extra-copy > p:not(.menu-extra-label) { margin: 0; }
-.menus-page .menu-extra-copy .menu-extra-condition {
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 1.6;
-}
 .menus-page .menu-extra-toggle {
-  flex: 0 0 auto;
-  width: auto;
-  min-height: 48px;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
   aspect-ratio: auto;
-  padding: 12px 22px;
-  border: 1px solid var(--gold);
-  border-radius: 999px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
   color: var(--brown);
   background: transparent;
+  box-shadow: none;
+}
+.menus-page .menu-extra-toggle:hover {
+  color: var(--gold);
+  box-shadow: none;
 }
 .menus-page .menu-extra-toggle .menu-choice-name {
   position: absolute;
@@ -599,11 +588,9 @@ body:has(.menus-page dialog[open]) {
   white-space: nowrap;
 }
 .menus-page .menu-extra-action {
-  display: flex;
-  align-items: center;
-  gap: 18px;
   font-family: var(--body-font);
-  font-size: 13px;
+  font-size: 28px;
+  line-height: 1;
 }
 .menus-page .menu-extra-toggle:focus-visible {
   outline: 2px solid var(--gold);
@@ -611,11 +598,8 @@ body:has(.menus-page dialog[open]) {
 }
 @media (max-width: 720px) {
   .menus-page .menu-extra {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
     margin-top: 0;
-    padding: 22px 18px;
+    padding: 16px 18px;
   }
   .menus-page .menu-extra h2 { font-size: 34px; }
 }
@@ -674,12 +658,6 @@ body:has(.menus-page dialog[open]) {
 .menus-page > dialog > form button:focus-visible {
   outline: none;
   box-shadow: inset 0 0 0 2px var(--gold);
-}
-
-@media (max-width: 950px) {
-  .menus-page > dialog > .menu-photo {
-    height: calc(clamp(145px, 40vw, 180px) + env(safe-area-inset-top));
-  }
 }
 
 .menus-page > dialog #menu-dialog-title:focus {
