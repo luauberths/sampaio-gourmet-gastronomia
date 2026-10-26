@@ -158,6 +158,17 @@ body:has(.menus-page dialog[open]) {
   padding-bottom: 16px;
 }
 
+.menus-page .menu-photo {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: clamp(180px, 24vw, 260px);
+  margin: 0 auto 24px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: var(--menu-photo-position, center);
+}
+
 .menus-page .menu-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
