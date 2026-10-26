@@ -3,7 +3,27 @@
   const animations = new Set();
   const activeAnimations = new WeakMap();
   const observed = new WeakSet();
-  const revealSelector = ".about-photo, .partner-card, .reviews-summary, .reviews-track";
+  const revealed = new WeakSet();
+  const revealSelector = [
+    ".page-layout .instagram-container",
+    ".page-layout .services-subtitle",
+    ".page-layout .hero-title",
+    ".page-layout .hero-description-container",
+    ".page-layout .slideshow-container",
+    ".menus-page > .page-header",
+    ".menus-page > .menu-extra",
+    ".menus-page > .menus-container > .menu-choice",
+    ".about-section .page-header",
+    ".about-content > .section-description",
+    ".about-photo",
+    ".partners-header",
+    ".partner-card",
+    ".form-section .page-header",
+    ".quote-container",
+    ".clients-section .page-header",
+    ".reviews-summary",
+    ".reviews-track",
+  ].join(", ");
   const controlSelector = ".menu-choice-toggle, .quote-button, .whatsapp-button, .quote-submit-button, .reviews-arrow, .date-calendar-toggle, .date-calendar-day";
 
   function play(element, frames, settings) {
@@ -19,7 +39,9 @@
     animation.finished.then(finish, finish);
   }
 
-  function reveal(element, delay = 0) {
+  function reveal(element, delay = 0, force = false) {
+    if (reducedMotion.matches || (!force && revealed.has(element))) return;
+    revealed.add(element);
     play(element, [
       { opacity: 0, transform: "translateY(10px)" },
       { opacity: 1, transform: "translateY(0)" },
@@ -31,16 +53,14 @@
     });
   }
 
-  function enterSection(section) {
+  function enterSection(section, force = true) {
     if (!section || reducedMotion.matches) return;
-    let selector = ".page-header";
-    if (section.matches(".page-layout")) selector = ".hero-content, .slideshow-container";
-    else if (section.matches(".menus-page")) selector = ":scope > .page-header, :scope > .menu-extra, :scope > .menus-container";
-    else if (section.matches(".about-section")) selector = ".page-header, .about-content > .section-description";
-    else if (section.matches(".form-section")) selector = ".page-header, .quote-container";
-    else if (section.matches(".clients-section")) selector = ".page-header, .clients-reviews";
-    section.querySelectorAll(selector).forEach((element, index) => {
-      reveal(element, Math.min(index * 45, 135));
+    const visible = Array.from(section.querySelectorAll(revealSelector)).filter((element) => {
+      const rect = element.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0;
+    });
+    visible.forEach((element, index) => {
+      reveal(element, Math.min(index * 40, 120), force);
     });
   }
 
@@ -76,7 +96,7 @@
 
   window.SampaioMotion = { enterSection };
   requestAnimationFrame(() => {
-    enterSection(document.querySelector(".page-layout, main.page-section"));
+    enterSection(document.querySelector(".page-layout, main.page-section"), false);
   });
 
   if ("IntersectionObserver" in window) {
