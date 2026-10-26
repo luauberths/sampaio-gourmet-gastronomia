@@ -31,7 +31,7 @@
   let redirectDestination = null;
   let initialHashDestination = null;
   let navigationScrollRequest = 0;
-  let sectionEntryFrame = null;
+  let navigationFrame = null;
 
   function scrollToTop() {
     const root = document.documentElement;
@@ -149,16 +149,16 @@
     return sectionsPromise;
   }
 
-  function animateSectionEntry(target) {
-    if (sectionEntryFrame !== null) cancelAnimationFrame(sectionEntryFrame);
-    sectionEntryFrame = null;
-    if (reducedMotionQuery.matches) return;
+  function finishSectionNavigation(target) {
+    if (navigationFrame !== null) cancelAnimationFrame(navigationFrame);
+    navigationFrame = null;
     const started = performance.now();
     let previousScroll = window.scrollY;
     let stableFrames = 0;
     const finish = () => {
       if (!mobileQuery.matches || !target.isConnected) {
-        sectionEntryFrame = null;
+        navigationFrame = null;
+        window.SampaioMotion?.endNavigation();
         return;
       }
       const currentScroll = window.scrollY;
@@ -166,13 +166,13 @@
       previousScroll = currentScroll;
       const elapsed = performance.now() - started;
       if ((elapsed > 100 && stableFrames >= 3) || elapsed > 1600) {
-        sectionEntryFrame = null;
-        window.SampaioMotion?.enterSection(target);
+        navigationFrame = null;
+        window.SampaioMotion?.endNavigation();
         return;
       }
-      sectionEntryFrame = requestAnimationFrame(finish);
+      navigationFrame = requestAnimationFrame(finish);
     };
-    sectionEntryFrame = requestAnimationFrame(finish);
+    navigationFrame = requestAnimationFrame(finish);
   }
 
   function navigateToSection(id, updateHistory = true, smooth = true) {
@@ -188,13 +188,14 @@
       );
     }
 
+    window.SampaioMotion?.beginNavigation();
     const requestId = ++navigationScrollRequest;
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
         if (requestId !== navigationScrollRequest || !mobileQuery.matches)
           return;
         scrollToElement(target, smooth);
-        animateSectionEntry(target);
+        finishSectionNavigation(target);
       }),
     );
   }
@@ -274,9 +275,10 @@
   mobileQuery.addEventListener("change", () => {
     if (mobileQuery.matches) {
       initializeMobile().catch(() => { });
-    } else if (sectionEntryFrame !== null) {
-      cancelAnimationFrame(sectionEntryFrame);
-      sectionEntryFrame = null;
+    } else {
+      if (navigationFrame !== null) cancelAnimationFrame(navigationFrame);
+      navigationFrame = null;
+      window.SampaioMotion?.endNavigation();
     }
   });
   initializeMobile().catch(() => { });

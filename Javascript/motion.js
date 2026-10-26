@@ -4,6 +4,7 @@
   const activeAnimations = new WeakMap();
   const observed = new WeakSet();
   const revealed = new WeakSet();
+  let navigatingSection = false;
   const revealSelector = [
     ".page-layout .instagram-container",
     ".page-layout .services-subtitle",
@@ -42,6 +43,7 @@
   function reveal(element, delay = 0, force = false) {
     if (reducedMotion.matches || (!force && revealed.has(element))) return;
     revealed.add(element);
+    if (navigatingSection) return;
     play(element, [
       { opacity: 0, transform: "translateY(10px)" },
       { opacity: 1, transform: "translateY(0)" },
@@ -62,6 +64,23 @@
     visible.forEach((element, index) => {
       reveal(element, Math.min(index * 40, 120), force);
     });
+  }
+
+  function beginNavigation() {
+    navigatingSection = true;
+    document.querySelectorAll(revealSelector).forEach((element) => {
+      activeAnimations.get(element)?.cancel();
+    });
+  }
+
+  function endNavigation() {
+    document.querySelectorAll(revealSelector).forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
+        revealed.add(element);
+      }
+    });
+    navigatingSection = false;
   }
 
   function press(element) {
@@ -94,7 +113,7 @@
     }
   });
 
-  window.SampaioMotion = { enterSection };
+  window.SampaioMotion = { enterSection, beginNavigation, endNavigation };
   requestAnimationFrame(() => {
     enterSection(document.querySelector(".page-layout, main.page-section"), false);
   });
