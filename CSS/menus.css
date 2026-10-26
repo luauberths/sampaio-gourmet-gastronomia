@@ -105,7 +105,7 @@
 }
 
 .menus-page > dialog::backdrop {
-  background: color-mix(in srgb, var(--black) 55%, transparent);
+  background: var(--cream);
 }
 
 body:has(.menus-page dialog[open]) {
