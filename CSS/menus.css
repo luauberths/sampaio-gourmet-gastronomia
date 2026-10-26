@@ -662,8 +662,8 @@ body:has(.menus-page dialog[open]) {
 .menus-page > dialog > form button,
 .menus-page > dialog:has(.menu-botanical) > form button {
   color: var(--brown);
-  background: var(--cream);
-  border: 1px solid var(--gold);
+  background: var(--white);
+  border: 0;
   box-shadow: none;
   outline: none;
   -webkit-appearance: none;
@@ -680,4 +680,8 @@ body:has(.menus-page dialog[open]) {
   .menus-page > dialog > .menu-photo {
     height: calc(clamp(145px, 40vw, 180px) + env(safe-area-inset-top));
   }
+}
+
+.menus-page > dialog #menu-dialog-title:focus {
+  outline: none;
 }
