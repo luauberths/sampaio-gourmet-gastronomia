@@ -1,0 +1,78 @@
+@media (prefers-reduced-motion: no-preference) {
+  .menu-choice-toggle,
+  .quote-button,
+  .whatsapp-button,
+  .quote-submit-button,
+  .reviews-arrow,
+  .date-calendar-toggle,
+  .date-calendar-day {
+    transition: scale 120ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  }
+
+  .menu-choice-toggle:active,
+  .quote-button:active,
+  .whatsapp-button:active,
+  .quote-submit-button:active,
+  .reviews-arrow:active:not(:disabled),
+  .date-calendar-toggle:active:not(:disabled),
+  .date-calendar-day:active:not(:disabled) {
+    scale: 0.985;
+  }
+
+  .menu-extra-action {
+    transition: translate 180ms ease;
+  }
+
+  .menu-extra-toggle:active .menu-extra-action {
+    translate: 2px 0;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .date-input-wrap,
+  .date-calendar-toggle,
+  .date-calendar-day {
+    transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, scale 120ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .slide {
+      transition: opacity 1s ease-in-out, scale 350ms ease;
+    }
+
+    .slideshow-container:hover .slide {
+      scale: 1.025;
+    }
+
+    .menu-extra-toggle:hover .menu-extra-action {
+      translate: 2px 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-choice-toggle,
+  .quote-button,
+  .whatsapp-button,
+  .quote-submit-button,
+  .reviews-arrow,
+  .slide,
+  .service-item,
+  #title-start,
+  #title-end,
+  #hero-description,
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .date-input-wrap,
+  .date-calendar-toggle,
+  .date-calendar-day {
+    transition: none;
+  }
+
+  .quote-button:hover,
+  .whatsapp-button:hover {
+    transform: none;
+  }
+}
